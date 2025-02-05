@@ -1,66 +1,74 @@
-Widget Manager
-🚀 Project Overview
+# Widget Manager
+
+## 🚀 Project Overview
+
 Widget Manager is a comprehensive web application for creating, managing, and configuring widgets across different pages with advanced configuration capabilities.
-✨ Key Features
-Widget Management
 
-Create new widgets
-Edit existing widgets
-Delete widgets
-View widgets across different pages
+## ✨ Key Features
 
-Advanced Configuration
+### Widget Management
+- Create new widgets
+- Edit existing widgets
+- Delete widgets
+- View widgets across different pages
 
-Page-specific widget management
-A/B Testing Support
+### Advanced Configuration
+- Page-specific widget management
+- A/B Testing Support
+  - Assign visibility percentage to widgets
+  - Ensure total widget percentage ≤ 100%
 
-Assign visibility percentage to widgets
-Ensure total widget percentage ≤ 100%
+## 🛠 Technology Stack
 
+- Next.js 14
+- TypeScript
+- Tailwind CSS
+- React Hooks
+- Lucide React Icons
 
+## 📦 Prerequisites
 
-🛠 Technology Stack
+- Node.js (v18 or later)
+- npm or yarn
+- Flask backend server
 
-Next.js 14
-TypeScript
-Tailwind CSS
-React Hooks
-Lucide React Icons
+## 🔧 Installation
 
-📦 Prerequisites
-
-Node.js (v18 or later)
-npm or yarn
-Flask backend server
-
-🔧 Installation
-
-Clone the repository
-
-bashCopygit clone <repository-url>
+1. Clone the repository
+```bash
+git clone <repository-url>
 cd widget-manager
+```
 
-Install dependencies
-
-bashCopynpm install
+2. Install dependencies
+```bash
+npm install
 # or
 yarn install
+```
 
-Set up environment variables
+3. Set up environment variables
+- Create a `.env` file
+- Add your API endpoint:
+```
+NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:5000
+```
 
+## 🚀 Running the Application
 
-Create a .env file
-Add your API endpoint:
-
-CopyNEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:5000
-🚀 Running the Application
 Development mode:
-bashCopynpm run dev
+```bash
+npm run dev
 # or
 yarn dev
-Open http://localhost:3000 in your browser
-🧩 Widget Structure
-typescriptCopyinterface Widget {
+```
+
+Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## 🧩 Widget Structure
+
+```typescript
+interface Widget {
   id?: string;
   page_name: string;
   header: string;
@@ -69,15 +77,16 @@ typescriptCopyinterface Widget {
   price?: string;
   showToPercentage: number;
 }
-🌈 Core Components
-WidgetForm
+```
 
-Create and edit widgets
-Percentage validation
-Error handling
+## 🌈 Core Components
 
-WidgetList
+### WidgetForm
+- Create and edit widgets
+- Percentage validation
+- Error handling
 
-Display widgets by page
-CRUD operations
-Responsive layout
+### WidgetList
+- Display widgets by page
+- CRUD operations
+- Responsive layout
