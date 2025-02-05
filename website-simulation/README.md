@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dynamic Website Simulation
 
-## Getting Started
+## 🌐 Project Overview
 
-First, run the development server:
+A dynamic website simulation application that demonstrates advanced A/B testing and widget management across multiple pages.
 
+## ✨ Key Features
+
+### A/B Testing Functionality
+- Dynamic widget loading for multiple pages
+- Percentage-based widget visibility
+- Random widget selection based on configuration
+- URL parameter-based experience forcing
+
+### Pages
+- Homepage
+- Cards Page
+- Wedding Page
+
+## 🛠 Technology Stack
+
+- Next.js 14
+- TypeScript
+- React Hooks
+- Tailwind CSS
+- Framer Motion (optional, for animations)
+
+## 🔧 Prerequisites
+
+- Node.js (v18+)
+- npm or yarn
+- Flask backend server running
+
+## 📦 Installation
+
+1. Clone the repository
+```bash
+git clone <repository-url>
+cd website-simulation
+```
+
+2. Install dependencies
+```bash
+npm install
+# or
+yarn install
+```
+
+3. Set up environment variables
+- Create a `.env` file
+- Add your API endpoint:
+```
+NEXT_PUBLIC_API_BASE_URL=http://127.0.0.1:5000
+```
+
+## 🚀 Running the Application
+
+Development mode:
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🎲 A/B Testing Logic
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Widget Selection Process
+1. Fetch widgets for the current page
+2. Generate a random number between 0-100
+3. Select widget based on `showToPercentage`
 
-## Learn More
+### Forced Experience
+Add a URL parameter to force a specific widget:
+```
+http://localhost:3000/?experience=widget_id
+http://localhost:3000/cards?experience=widget_id
+```
 
-To learn more about Next.js, take a look at the following resources:
+## 🏗 Core Components
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### `DynamicPage`
+- Fetches page-specific widgets
+- Implements A/B testing logic
+- Renders selected widget
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### `WebsiteLayout`
+- Provides consistent navigation
+- Responsive design
+- Shared layout across pages
